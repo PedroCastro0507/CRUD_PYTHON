@@ -2,9 +2,8 @@ import os
 import time
 
 lista = []
-condicao = True
 
-while condicao:
+while True:
     print("Selecione uma opção")
     opcao = input("[i]nserir [a]pagar [l]istar: ").lower()
 
@@ -16,7 +15,7 @@ while condicao:
     elif opcao == "a":
         try:
             valor = int(input("Escolha o índice para apagar: "))
-            lista.pop(valor - 1)
+            del lista[valor - 1]
             time.sleep(0.5)
             os.system("cls")
         except IndexError:
